@@ -1,0 +1,86 @@
+object WinMain: TWinMain
+  Left = 290
+  Height = 325
+  Top = 132
+  Width = 500
+  ClientHeight = 325
+  ClientWidth = 500
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.0.10.0'
+  object GrpVars: TGroupBox
+    Left = 0
+    Height = 140
+    Top = 0
+    Width = 500
+    Align = alTop
+    Caption = '&vars'
+    ClientHeight = 121
+    ClientWidth = 496
+    TabOrder = 0
+    OnEnter = ActivateFirstChild
+    object EdtVars: TMemo
+      Left = 0
+      Height = 121
+      Top = 0
+      Width = 496
+      Align = alClient
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+      WantTabs = True
+      WordWrap = False
+    end
+    object BtnSortVars: TButton
+      Left = 43
+      Height = 17
+      Top = -17
+      Width = 40
+      Caption = '&sort'
+      OnClick = BtnSortVarsClick
+      TabOrder = 1
+    end
+  end
+  object GrpScript: TGroupBox
+    Left = 0
+    Height = 102
+    Top = 140
+    Width = 500
+    Align = alTop
+    Caption = 'sc&ript'
+    ClientHeight = 83
+    ClientWidth = 496
+    TabOrder = 1
+    OnEnter = ActivateFirstChild
+    object EdtScript: TMemo
+      Left = 0
+      Height = 83
+      Top = 0
+      Width = 496
+      Align = alClient
+      ScrollBars = ssAutoBoth
+      TabOrder = 0
+      WantTabs = True
+      WordWrap = False
+    end
+  end
+  object LstInternalCfg: TListBox
+    Left = 33
+    Height = 58
+    Top = 261
+    Width = 297
+    Items.Strings = (
+      'LstInternalCfg'
+      'PayloadOffsetApprox='
+    )
+    ItemHeight = 23
+    ScrollWidth = 293
+    TabOrder = 2
+    Visible = False
+  end
+  object TmrPanic: TTimer
+    Interval = 500
+    OnTimer = TmrPanicTimer
+    left = 75
+    top = 60
+  end
+end
